@@ -1,0 +1,744 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "normalizes.css";
+@import "resets.css";
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --hue: 174;
+    --sat: 63%;
+    --first-color: hsl(var(--hue), var(--sat), 40%);
+    --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+    --title-color: hsl(var(--hue), 12%, 15%);
+    --text-color: hsl(var(--hue), 8%, 35%);
+    --body-color: hsl(var(--hue), 100%, 99%);
+    --container-color: #FFF;
+    --light-balck-color: #202020;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Open Sans', sans-serif;
+    --h1-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --tiny-font-size: .625rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --h1-font-size: 2.25rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section__height {
+    min-height: 100vh;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+    max-width: 968px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    z-index: var(--z-fixed);
+    transition: .4s;
+}
+
+/*=============== NAV ===============*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__img {
+    width: 32px;
+    border-radius: 50%;
+}
+
+.nav__logo {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+    /* .nav__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    display: grid;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: .4s;
+  } */
+}
+
+.nav__list,
+.nav__link {
+    display: flex;
+}
+
+.nav__link {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4px;
+    color: var(--title-color);
+    /* font-weight: 600; */
+}
+
+.nav__list {
+    justify-content: space-around;
+}
+
+.nav__name {
+    font-size: var(--tiny-font-size);
+    /* display: none;*/
+    /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+    font-size: 1.5rem;
+}
+
+/*Active link*/
+.active-link {
+    position: relative;
+    color: var(--first-color);
+    transition: .3s;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  width: 4px;
+  height: 4px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+} */
+
+/* Change background header */
+.scroll-header {
+    box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .nav__list {
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        margin: 0;
+    }
+
+    .section {
+        padding: 7rem 0 2rem;
+    }
+
+    /* .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  } */
+    .nav__img {
+        display: none;
+    }
+
+    .nav__icon {
+        display: none;
+    }
+
+    .nav__name {
+        font-size: 13px;
+        /* display: block; */
+        /* Minimalist design, visible labels */
+    }
+
+    .nav__link:hover {
+        color: var(--first-color);
+    }
+
+    /* First design, remove if you choose the minimalist design */
+    .active-link::before {
+        content: '';
+        position: absolute;
+        bottom: -.5rem;
+        width: 22px;
+        height: 3px;
+        background-color: var(--first-color);
+        border-radius: 3px;
+    }
+
+    /* Minimalist design */
+    /* .active-link::before{
+      bottom: -.75rem;
+  } */
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.header__toggle {
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.nav__menu.active {
+    height: 300px;
+}
+
+.nav__menu.active ul {
+    opacity: 1;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* 600px */
+@media only screen and (max-width: 680px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav__menu {
+        height: 0px;
+        /* display: none; */
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: var(--container-color);
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav__list {
+        display: block;
+        width: fit-content;
+        margin: 54px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav__item a {
+        margin-bottom: 20px;
+    }
+
+    .nav__name {
+        font-size: 1rem;
+        /* display: block; */
+        /* Minimalist design, visible labels */
+    }
+
+    .call_btn {
+        display: none;
+    }
+}
+
+
+.call_btn {
+    width: 145px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid var(--light-balck-color);
+
+}
+
+.innercont_ofcall {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6.4px;
+}
+
+.tel_numb {
+    font-size: 12px;
+    color: var(--light-balck-color);
+}
+
+.call_icon {
+    width: 10px;
+}
+
+.logo_icon {
+    width: 116px;
+}
+
+
+
+
+
+
+
+/* Slider */
+
+.slider {
+    position: relative;
+    width: 100%;
+    background: #2c3e50;
+    /* darckblue */
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+.myslide {
+    height: 400px;
+    display: none;
+    overflow: hidden;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 50px;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.1s;
+    user-select: none;
+}
+
+.prev:hover,
+.next:hover {
+    color: #00a7ff;
+    /* blue */
+}
+
+.next {
+    right: 0;
+}
+
+.dotsbox {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 7px;
+    cursor: pointer;
+}
+
+.dot {
+    display: inline-block;
+    width: 33px;
+    height: 3px;
+    background-color: #b7b7b7;
+    border-radius: 3px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* /2 */
+
+/* javascript */
+.active,
+.dot:hover {
+    background-color: #FFF;
+    /* blue */
+}
+
+/* /javascript */
+
+/* muslide add fade */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.8
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.8
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* /muslide add fade */
+
+/* 3 */
+.txt {
+    position: absolute;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 35px;
+    top: 40%;
+    left: 15%;
+    -webkit-animation-name: posi;
+    -webkit-animation-duration: 2s;
+    animation-name: posi;
+    animation-duration: 2s;
+    z-index: 1;
+}
+
+@-webkit-keyframes posi {
+    from {
+        left: 25%;
+    }
+
+    to {
+        left: 15%;
+    }
+}
+
+
+@keyframes posi {
+    from {
+        left: 25%;
+    }
+
+    to {
+        left: 15%;
+    }
+}
+
+.txt h1 {
+    color: #00a7ff;
+    /* blue */
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.txt p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* /3 */
+
+/* 4 */
+.slider_img {
+    transform: scale(1.5, 1.5);
+    -webkit-animation-name: zoomin;
+    -webkit-animation-duration: 40s;
+    animation-name: zoomin;
+    animation-duration: 40s;
+}
+
+@-webkit-keyframes zoomin {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+
+@keyframes zoomin {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+/* /4 */
+
+
+
+/* 5 */
+@media screen and (max-width: 800px) {
+    .myslide {
+        height: 210px;
+    }
+
+    .txt {
+        letter-spacing: 2px;
+        line-height: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-animation-name: posi2;
+        -webkit-animation-duration: 2s;
+        animation-name: posi2;
+        animation-duration: 2s;
+    }
+
+    @-webkit-keyframes posi2 {
+        from {
+            top: 35%;
+        }
+
+        to {
+            top: 50%;
+        }
+    }
+
+
+    @keyframes posi2 {
+        from {
+            top: 35%;
+        }
+
+        to {
+            top: 50%;
+        }
+    }
+
+    .txt h1 {
+        font-size: 40px;
+    }
+
+    .txt p {
+        font-size: 13px;
+    }
+
+}
+
+/* /5 */
+
+/* 6 */
+@media screen and (max-width: 520px) {
+    .txt h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .prev,
+    .next {
+        display: none;
+    }
+
+    .dot {
+        width: 19px;
+        margin: 0 3px;
+    }
+}
+
+/* /6 */
+
+
+
+.slider_img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(27px);
+    border-radius: 35px;
+    padding: 12px 28px;
+}
+
+.txt_card {
+    position: absolute;
+    width: 70%;
+	color: #fff;
+	/* letter-spacing: 2px; */
+	line-height: 20px;
+	top: 12%;
+	left: 15%;
+	-webkit-animation-name: posi;
+  	-webkit-animation-duration: 2s;
+  	animation-name: posi;
+  	animation-duration: 2s;
+	z-index: 1;
+}
+
+.home_section {
+    padding-top: var(--header-height);  
+}
+
+@media screen and (max-width: 767px) {
+    .home_section {
+        padding-top: 0;
+    }
+}
+
+.inslider_coalescence {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.slider_text {
+    margin-top: 45px;
+    max-width: 400px;
+    font-size: 25;
+}
+
+.white_logo {
+    padding-top: 10px;
+    width: 135px;
+}
+
+.middletext {
+    padding-top: 10px;
+    line-height: 30px;
+    color: #C06740;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.whitelogo_block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomtext {
+    font-size: 17px;
+    padding-top: 20px;
+}
+
+@media screen and (min-width: 1030px){
+    .card {
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        width: 302px;
+        height: 300px;
+        transition: all 0.2s;
+        position: relative;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .slider_text {
+        display: none;
+    }
+    .whitelogo_block {
+        display: none;
+    }
+    .card {
+        max-width: 630px;
+        min-height: 200px;
+    }
+    .inslider_coalescence {
+        flex-direction: row;
+        justify-content: center;
+
+         
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .middletext {
+        font-size: 18px;
+    }
+    .bottomtext {
+        padding-top: 10px;
+    }   
+    .card-inner {
+        padding: 12px 18px;
+        border-radius: 20px;
+    }
+}
