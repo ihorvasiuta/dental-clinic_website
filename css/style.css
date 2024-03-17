@@ -788,7 +788,7 @@ img {
 }
 
 .underslider_texts {
-    padding-top: 70px;
+    padding-top: 50px;
     width: 100%;
 }
 
@@ -808,13 +808,14 @@ img {
 }
 
 .largest_text_home {
-    padding-top: 20px;
+    line-height: 23px;
+    padding-top: 30px;
     font-size: 17px;
     font-family: "Niramit", sans-serif;
     font-weight: 200;
     font-style: normal;
     color: #000000;
-    text-align: center;
+    text-align: justify;
 }
 
 .about_part {
@@ -862,6 +863,7 @@ img {
 
 
 .section_text_inner {
+    color: #72604b;
     text-align: center;
 }
 
