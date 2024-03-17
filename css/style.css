@@ -768,9 +768,11 @@ img {
     .slider_text {
         display: block;
     }
+
     .card {
         display: none;
     }
+
     .middletext {
         display: none;
     }
@@ -845,6 +847,7 @@ img {
 .about_container {
     max-height: 670px;
 }
+
 /* .about_textone {
     padding-top: 100px;
 } */
@@ -911,12 +914,15 @@ img {
     .bluredblocks_block {
         justify-content: center;
     }
+
     .bl_block {
         margin: 10px 20px;
     }
+
     .google_map {
         height: 250px;
     }
+
     .fr_block_none {
         display: none;
     }
@@ -940,6 +946,7 @@ img {
         width: 213px;
         height: 193px;
     }
+
     .bluredblocks_block {
         bottom: 30px;
     }
@@ -950,22 +957,28 @@ img {
         flex-direction: column;
         bottom: -20px;
     }
+
     .blured_block {
         width: 272px;
         height: 165px;
     }
+
     .underslider_texts {
         padding-top: 40px;
     }
+
     .largest_text_home {
         font-size: 15px;
     }
+
     .maintitle {
         font-size: 18px;
     }
+
     .inner_about {
         padding: 38px 22px;
     }
+
     .third_section_extern {
         padding-top: 40px;
     }
@@ -982,6 +995,7 @@ img {
     .toothinabout {
         left: 5%;
     }
+
     .section__height {
         min-height: 30vh;
     }
@@ -996,6 +1010,7 @@ img {
 .team_section {
     background: #ebebeb;
 }
+
 .team_dentists_part {
     display: flex;
     align-items: center;
@@ -1010,6 +1025,7 @@ img {
     height: 310px;
     /* border: 1px solid #818181; */
 }
+
 .inner_dentist_block {
     display: flex;
     flex-direction: column;
@@ -1065,22 +1081,54 @@ img {
         display: grid;
         align-items: center;
         justify-content: space-between;
-        gap: 20px; /* Adjust gap between blocks as needed */
+        gap: 20px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
     }
-    
+
     .dentist_block {
         width: 100%;
     }
 
     .dentist_block:nth-child(3) {
-        grid-column: 1 / -1; 
+        grid-column: 1 / -1;
     }
 }
 
 @media screen and (max-width: 520px) {
     .team_dentists_part {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Calling Button on the small devices */
+
+.smalldvc_call_btn {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .smalldvc_call_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        z-index: var(--z-fixed);
+        bottom: 0;
+        position: fixed;
+        border: 2px solid black;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+        margin-right: 25px;
+        backdrop-filter: blur(10px);
+    }
+
+    .onsmallcall_img {
+        width: 20px;
     }
 }
