@@ -383,15 +383,14 @@ img {
     font-size: 50px;
     padding: 15px;
     cursor: pointer;
-    color: #fff;
+    color: #d6d6d6;
     transition: 0.1s;
     user-select: none;
 }
 
 .prev:hover,
 .next:hover {
-    color: #00a7ff;
-    /* blue */
+    color: #ffffff;
 }
 
 .next {
@@ -501,7 +500,8 @@ img {
 }
 
 .txt p {
-    font-weight: bold;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
     font-size: 20px;
 }
 
