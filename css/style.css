@@ -508,13 +508,13 @@ img {
 /* /3 */
 
 /* 4 */
-.slider_img {
+/* .slider_img { */
     /* transform: scale(1.5, 1.5);
     -webkit-animation-name: zoomin;
     -webkit-animation-duration: 40s;
     animation-name: zoomin;
     animation-duration: 40s; */
-}
+/* } */
 
 @-webkit-keyframes zoomin {
     from {
@@ -961,7 +961,7 @@ img {
     }
 
     .blured_block {
-        width: 272px;
+        width: 100%;
         height: 165px;
     }
 
@@ -1120,7 +1120,7 @@ img {
         z-index: var(--z-fixed);
         bottom: 0;
         position: fixed;
-        border: 2px solid black;
+        border: 1px solid #8e8e8e;
         border-radius: 50%;
         height: 50px;
         width: 50px;
@@ -1128,9 +1128,46 @@ img {
         margin-bottom: 30px;
         margin-right: 25px;
         backdrop-filter: blur(10px);
+        background-color: #bfd3e9;
     }
 
     .onsmallcall_img {
         width: 20px;
+    }
+}
+
+
+
+
+/* Why to choose */
+.whytochoose_section {
+    background: #fcf8f8;
+}
+.whytochoose_part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whytochoose_title {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: underline 1px;
+    padding-bottom: 23px;
+}
+
+.whytochoose_reason {
+    line-height: 22px;
+    padding: 14px 20px;
+}
+
+.whytochoose_reason:last-child {
+        padding-bottom: 30px;
+}
+@media screen and (max-width: 500px){
+    .whytochoose_reason {
+        padding: 3px 0px;
     }
 }
