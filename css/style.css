@@ -1017,6 +1017,8 @@ img {
     .bluredblock_inner {
         border-radius: 23px;
         background: rgba(239, 239, 239, 0.78);
+        box-shadow: none;
+        border: none;
     }
 }
 
