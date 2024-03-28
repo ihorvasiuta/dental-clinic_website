@@ -1014,6 +1014,10 @@ img {
     .fr_block_none {
         display: none;
     }
+    .bluredblock_inner {
+        border-radius: 23px;
+        background: rgba(239, 239, 239, 0.78);
+    }
 }
 
 .aboutplace_title {
