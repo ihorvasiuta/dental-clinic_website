@@ -1084,8 +1084,12 @@ img {
 }
 
 
+@media (max-width: 600px) {
+    main {
+        font-family: "Poiret One", sans-serif;
+    }
 
-
+}
 /* Team Section */
 
 .team_section {
