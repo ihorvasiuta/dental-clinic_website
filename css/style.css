@@ -1083,15 +1083,6 @@ img {
     }
 }
 
-
-@media only screen and (max-width: 480px) {
-    main {
-        font-family: "Poiret One", sans-serif;
-        font-weight: normal;
-    }
-
-}
-
 /* Team Section */
 
 .team_section {
@@ -1383,5 +1374,12 @@ img {
     .c_name {
         padding-top: 20px;
         padding-bottom: 15px;  
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .largest_text_home {
+        font-weight: normal;
     }
 }
